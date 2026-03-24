@@ -1,0 +1,18 @@
+toml[project]
+name = "mai_pal_agent"
+version = "1.2.2"
+description = "MaiPal AI Agent - 脉脉数字人背后 Agent"
+requires-python = ">=3.10"
+dependencies = [
+    "flask>=3.0.0",
+    "pypdf2>=3.0.0",
+    "qwen-sdk>=0.1.0",
+    "python-dotenv>=1.0.0",
+    "pillow>=10.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "black"]
+
+[tool.setuptools]
+packages = ["app", "nodes", "tools"]

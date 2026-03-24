@@ -1,0 +1,44 @@
+name: mai_pal_app
+description: MaiPal（脉脉） - 中医健康陪伴 APP
+publish_to: 'none'
+version: 1.2.2+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # 多模态输入（望闻问切）
+  camera: ^0.10.6                  # 望：摄像头自动拍照
+  speech_to_text: ^6.6.2           # 闻：语音输入
+  health: ^4.0.0                   # 切：读取手机健康 App 数据（Android/iOS Health Connect / Apple Health）
+
+  # 数字人动画（简单形象 + 不同情景动作神态）
+  lottie: ^3.1.2                   # 推荐优先使用 Lottie（轻量）
+  # rive: ^0.13.0                  # 可选：如果需要更复杂交互可改用 Rive
+
+  # 网络请求（调用后端 Agent）
+  http: ^1.2.2
+
+  # UI 基础
+  fluttertoast: ^8.2.8             # 提示
+  provider: ^6.1.2                 # 极简状态管理（MVP 够用，后续可换 Riverpod）
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/animations/           # 放数字人 Lottie/Rive 文件（pulse_idle.json、talking.json 等）
+    - assets/images/
+
+  fonts:
+    - family: PingFang
+      fonts:
+        - asset: assets/fonts/PingFang_SC_Regular.ttf
